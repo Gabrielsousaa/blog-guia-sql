@@ -6,10 +6,10 @@ const Category = connection.define('categories', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    slug: {
+    slug: { // desenvolvimento Web = desenvolvimento-web é uma versao da categoria do titulo
         type: Sequelize.STRING,
         allowNull: false
-    } // desenvolvimento Web = desenvolvimento-web é uma versao da categoria do titulo
+    }
 
 });
 

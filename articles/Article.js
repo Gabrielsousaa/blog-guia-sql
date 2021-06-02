@@ -1,12 +1,13 @@
 const Sequelize = require("sequelize");
 const connection = require("../database/database");
+const Category = require("../categories/Category");
 
 const Article = connection.define('articles', {
     title: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    slug: { // slug desenvolvimento Web = desenvolvimento-web é uma versao da categoria do titulo
+    slug: { // slug desenvolvimento Web = desenvolvimento-web é u ma versao da categoria do titulo
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -16,5 +17,6 @@ const Article = connection.define('articles', {
     }
 
 });
-
+Category.hasMany(Article); // uma categoria tem muitos artigos
+Article.belongsTo(Category); // um artigo pertence a uma categoria
 module.exports = Article;
