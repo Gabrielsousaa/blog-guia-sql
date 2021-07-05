@@ -31,7 +31,10 @@
                             <%= article.category.title %>
                         </th>
                         <th>
-                            Acões
+                            <form method="POST" action="/articles/delete" style="display: inline;" onsubmit="confirmarDeleção(event, this)">
+                                <input type="hidden" name="id" value="<%= article.id %>" />
+                                <button class="btn btn-danger">Deletar</button>
+                            </form>
                         </th>
                         <% }); %>
                 </tbody>
@@ -43,7 +46,7 @@
             <script>
                 function confirmarDeleção(event, form) {
                     event.preventDefault()
-                    var decision = confirm('Tem certeza que quer deletar esta categoria?')
+                    var decision = confirm('Tem certeza que quer deletar este artigo?')
                     if (decision) {
                         console.log('Eu escolhi deletar')
                         form.submit()

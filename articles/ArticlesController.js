@@ -34,6 +34,29 @@ router.post("/articles/save", (req, res) => {
 
 });
 
+router.post("/articles/delete", (req, res) => {
+    var id = req.body.id;
+
+    if (id != undefined) {
+        if (!isNaN(id)) { //verifica se o valor for numerico
+
+            Article.destroy({
+                where: {
+                    id: id
+                }
+            }).then(() => {
+                res.redirect("/admin/articles");
+            });
+
+        } else { //id nao for numero
+            res.redirect("/admin/articles");
+        }
+
+    } else { // null
+        res.redirect("/admin/articles");
+    }
+
+});
 
 
 
