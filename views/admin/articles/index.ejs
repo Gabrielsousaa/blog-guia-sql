@@ -4,7 +4,7 @@
         <div class="container">
             <hr>
             <h2>Artigos</h2>
-            <a class="btn btn-success" href="/admin/categories/new">Criar nova artigo</a>
+            <a class="btn btn-success" href="/admin/articles/new">Criar nova artigo</a>
             <hr>
             <table class="table table-bordered">
                 <thead>
@@ -18,24 +18,26 @@
                 </thead>
                 <tbody>
                     <% articles.forEach(article => { %>
-                        <th>
-                            <%= article.id %>
-                        </th>
-                        <th>
-                            <%= article.title %>
-                        </th>
-                        <th>
-                            <%= article.slug %>
-                        </th>
-                        <th>
-                            <%= article.category.title %>
-                        </th>
-                        <th>
-                            <form method="POST" action="/articles/delete" style="display: inline;" onsubmit="confirmarDeleção(event, this)">
-                                <input type="hidden" name="id" value="<%= article.id %>" />
-                                <button class="btn btn-danger">Deletar</button>
-                            </form>
-                        </th>
+                        <tr>
+                            <th>
+                                <%= article.id %>
+                            </th>
+                            <th>
+                                <%= article.title %>
+                            </th>
+                            <th>
+                                <%= article.slug %>
+                            </th>
+                            <th>
+                                <%= article.category.title %>
+                            </th>
+                            <th>
+                                <form method="POST" action="/articles/delete" style="display: inline;" onsubmit="confirmarDeleção(event, this)">
+                                    <input type="hidden" name="id" value="<%= article.id %>" />
+                                    <button class="btn btn-danger">Deletar</button>
+                                </form>
+                            </th>
+                        </tr>
                         <% }); %>
                 </tbody>
             </table>

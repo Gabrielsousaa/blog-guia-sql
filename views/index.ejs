@@ -1,6 +1,35 @@
 <%-include('partials/header.ejs')-%>
+    <%-include('partials/navbar_home.ejs')-%>
 
-    <body>
-        <h1>ola mundo</h1>
-    </body>
-    <%-include('partials/footer.ejs')-%>
+        <body>
+            <div class="container">
+                <hr>
+                <div class="jumbotron">
+                    <h1 class="display-4">Seja bem-vindo</h1>
+                    <p class="lead">
+                        Esta é uma plataforma de artigos onde você pode ler, escrever, discutir, os artigos de outros ou até o seu!
+                    </p>
+                    <hr class="my-4" />
+                    <p>
+                        Abaixo estão a mostra os artigos!
+                    </p>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                </div>
+                <hr>
+                <% articles.forEach(article => { %>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>
+                                <%= article.title %>
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn-success">Ler artigo</a>
+                        </div>
+                    </div>
+                    <br>
+                    <% }) %>
+            </div>
+        </body>
+        <%-include('partials/footer.ejs')-%>
