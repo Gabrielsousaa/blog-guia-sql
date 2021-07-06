@@ -11,11 +11,10 @@
 
         <% categories.forEach(category => { %>
             <li class="nav-item">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="/category/<%= category.slug %>">
                     <%= category.title %>
                 </a>
             </li>
-
             <% }) %>
     </ul>
 </nav>
