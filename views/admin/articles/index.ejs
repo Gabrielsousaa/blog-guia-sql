@@ -17,6 +17,8 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <a class="btn btn-warning" href="/admin/articles/edit">Editar</a>
+
                     <% articles.forEach(article => { %>
                         <tr>
                             <th>
@@ -32,6 +34,7 @@
                                 <%= article.category.title %>
                             </th>
                             <th>
+
                                 <form method="POST" action="/articles/delete" style="display: inline;" onsubmit="confirmarDeleção(event, this)">
                                     <input type="hidden" name="id" value="<%= article.id %>" />
                                     <button class="btn btn-danger">Deletar</button>

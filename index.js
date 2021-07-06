@@ -9,8 +9,6 @@ const ArticlesController = require("./articles/ArticlesController");
 const Article = require("./articles/Article");
 const Category = require("./categories/Category");
 
-//const gitExtension = vscode.extensions.getExtension < GitExtension > ('vscode.git').exports;
-//const git = gitExtension.getAPI(1);
 
 // view engine
 app.set('view engine', 'ejs');
